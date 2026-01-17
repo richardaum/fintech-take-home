@@ -1,1 +1,1 @@
-// Shared UI components
+export { BottomNav } from './bottom-nav'
