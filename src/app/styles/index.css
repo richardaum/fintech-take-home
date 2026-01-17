@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @import './tokens.css';
 
@@ -13,8 +14,8 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;
-  color: var(--color-content-primary);
-  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
+  background-color: var(--color-dark);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
