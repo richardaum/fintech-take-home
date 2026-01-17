@@ -1,26 +1,7 @@
-# Feature-Sliced Design (FSD) Rules
-You must strictly follow FSD architecture for all code generation and refactoring.
+# Project Rules
 
-## Layer Hierarchy
-Always respect the hierarchy (top-to-bottom only):
-1. App: Setup, styles, and providers.
-2. Processes (Optional): Complex multi-step flows.
-3. Pages: Full views composed of widgets and features.
-4. Widgets: Self-contained UI blocks (e.g., Header, Sidebar).
-5. Features: User-facing value (e.g., AddToCart, AuthByEmail).
-6. Entities: Business logic (e.g., User, Product, Order).
-7. Shared: Reusable UI, API clients, and utils.
+This file references detailed documentation files in the `/docs` directory.
 
-## Strict Restrictions
-- NEVER allow cross-imports within the same layer (e.g., Feature A cannot import Feature B).
-- ONLY use Public APIs (`index.ts`) to export from a slice. Deep imports are forbidden.
-- Components in 'Shared' must be logic-agnostic.
-- Business logic should stay in 'Entities' or 'Features'.
+## Feature-Sliced Design (FSD)
 
-## File Structure
-Each slice folder should contain:
-- `ui/`: Components.
-- `model/`: State, types, and logic.
-- `lib/`: Internal utils.
-- `api/`: Requests (if applicable).
-- `index.ts`: The public API.
+See [docs/fsd.md](./docs/fsd.md) for FSD architecture rules and guidelines.
