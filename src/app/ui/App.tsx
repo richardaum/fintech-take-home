@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { HomePage, ProfilePage, ChatPage } from '@/pages'
+import { BrowserRouter, Route,Routes } from 'react-router-dom'
+
+import { ChatPage,HomePage, ProfilePage } from '@/pages'
 
 function App() {
   return (
