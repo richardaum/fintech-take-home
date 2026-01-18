@@ -1,2 +1,3 @@
-export { default as headerBackground } from './header-background.svg'
-export { default as reactLogo } from './react.svg'
+export { default as Chat } from './chat.svg?react'
+export { default as HeaderBackground } from './header-background.svg'
+export { default as ReactLogo } from './react.svg?react'

@@ -5,6 +5,7 @@ import { cn } from '@/shared/lib/cn'
 type ButtonVariant = 'outline' | 'primary' | 'ghost'
 type ButtonShape = 'square' | 'radius' | 'round'
 type ButtonSize = 'auto' | 'nav' | 'thin'
+type ButtonColor = 'white' | 'accent'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
@@ -12,6 +13,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: ButtonVariant
   shape?: ButtonShape
   size?: ButtonSize
+  color?: ButtonColor
 }
 
 function Button({
@@ -22,6 +24,7 @@ function Button({
   shape = 'round',
   size = 'auto',
   disabled,
+  color = 'white',
   ...props
 }: ButtonProps) {
   const variantStyles = {
@@ -45,6 +48,11 @@ function Button({
     nav: cn('h-16 w-16 p-0'),
   }
 
+  const colorStyles = {
+    white: cn('text-content-primary'),
+    accent: cn('text-content-accent', variant === 'outline' && 'border-content-accent'),
+  }
+
   return (
     <button
       className={cn(
@@ -53,6 +61,7 @@ function Button({
         disabled ? 'cursor-not-allowed' : 'cursor-pointer',
         'gap-2',
         variantStyles[variant],
+        colorStyles[color],
         shapeStyles[shape],
         sizeStyles[size],
         className
