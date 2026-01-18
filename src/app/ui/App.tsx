@@ -6,8 +6,10 @@ import { BottomNav } from '@/shared/ui'
 import { ScrollToTop } from './ScrollToTop'
 
 function App() {
+  const basename = import.meta.env.BASE_URL
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
