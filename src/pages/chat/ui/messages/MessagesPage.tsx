@@ -1,20 +1,29 @@
-import { PageContainer, PageContent } from '@/shared/ui'
-import { useBottomNavVisibility } from '@/shared/ui/bottom-nav'
+import { useEffect } from 'react'
 
-import { AnimationName } from './animations'
+import { useAnimationStore } from '@/shared/lib/animations'
+import { PageContainer, PageContent } from '@/shared/ui'
+
 import { Content } from './Content'
 import { Header } from './Header'
-
-const EXPECTED_ANIMATIONS = [AnimationName.HeaderTopbar]
+import { MessageInput } from './MessageInput'
+import { useScrollToRef } from './useScrollToRef'
 
 function MessagesPage() {
-  useBottomNavVisibility({ expectedAnimations: EXPECTED_ANIMATIONS })
+  const setShowBottomNav = useAnimationStore((state) => state.setShowBottomNav)
+  const { bottomRef } = useScrollToRef()
+
+  useEffect(() => {
+    setShowBottomNav(false)
+  }, [setShowBottomNav])
+
   return (
-    <PageContainer>
+    <PageContainer className="flex flex-1 flex-col">
       <Header />
-      <PageContent>
+      <PageContent className="flex flex-1 flex-col">
         <Content />
+        <div ref={bottomRef} />
       </PageContent>
+      <MessageInput />
     </PageContainer>
   )
 }

@@ -23,3 +23,7 @@ Whenever possible and more readable, prefer regular functions at module-level ov
 
 - Index files (`index.ts`, `index.tsx`) should only contain exports or imports, not implementation code.
 - Implementation code should be moved to separate files and exported from the index file.
+
+# Comments
+
+- Avoid generating comments, unless explicity asked.

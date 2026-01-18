@@ -29,14 +29,14 @@ const ICONS = {
 }
 
 function BottomNav() {
-  const { showBottomNav, expectedAnimations } = useAnimationStore(
+  const { showBottomNav } = useAnimationStore(
     useShallow((state) => ({
       showBottomNav: state.showBottomNav,
       expectedAnimations: state.expectedAnimations,
     }))
   )
 
-  if (!showBottomNav && expectedAnimations.length > 0) {
+  if (!showBottomNav) {
     return null
   }
 

@@ -30,9 +30,12 @@ function Button({
   const variantStyles = {
     outline: cn(
       'text-content-primary border-[1.5px] border-white bg-transparent',
-      disabled && 'cursor-not-allowed opacity-50'
+      disabled && 'cursor-not-allowed border-gray-600 bg-gray-600'
     ),
-    primary: cn('text-content-on-color bg-bg-accent border-0', disabled && 'cursor-not-allowed opacity-50'),
+    primary: cn(
+      'text-content-on-color bg-bg-accent border-0',
+      disabled && 'text-content-disabled cursor-not-allowed bg-gray-600'
+    ),
     ghost: cn('text-content-primary border-0 bg-transparent', disabled && 'cursor-not-allowed opacity-50'),
   }
 

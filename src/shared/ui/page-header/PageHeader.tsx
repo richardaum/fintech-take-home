@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { AngleLeftIcon } from '@/shared/icons'
 import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 
+import { Button } from '../button'
+
 type PageHeaderProps = {
   title: string
   animationName: string
@@ -27,14 +29,16 @@ function PageHeader({ title, animationName, delay = 0 }: PageHeaderProps) {
         addCompletedAnimation(animationName)
       }}
     >
-      <button
+      <Button
+        variant="ghost"
+        size="thin"
         type="button"
         onClick={handleBackClick}
         className="absolute left-2 flex items-center justify-center"
         aria-label="Go back"
       >
         <AngleLeftIcon className="size-6" />
-      </button>
+      </Button>
       <h1 className="text-headline-small font-medium">{title}</h1>
     </motion.header>
   )
