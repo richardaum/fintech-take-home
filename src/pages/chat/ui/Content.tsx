@@ -3,13 +3,14 @@ import { motion } from 'framer-motion'
 import { Chat } from '@/shared/assets'
 import { ChatFilledIcon, QuestionCircleIcon } from '@/shared/icons'
 import { animationManager, useAnimationStore } from '@/shared/lib/animations'
+import { cn } from '@/shared/lib/cn'
 import { Button } from '@/shared/ui'
 
 import { AnimationName, chatAnimationDelays } from './animations'
 
-function Content() {
+function Content({ className }: { className?: string }) {
   return (
-    <main className="text-center">
+    <main className={cn('flex flex-col items-center text-center', className)}>
       <ChatIllustration />
       <Title />
       <Description />
@@ -22,7 +23,7 @@ function ChatIllustration() {
   const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
 
   return (
-    <motion.div
+    <motion.section
       {...animationManager.getAnimationProps({
         type: 'fade',
         delay: chatAnimationDelays.chatIcon,
@@ -31,8 +32,8 @@ function ChatIllustration() {
         addCompletedAnimation(AnimationName.ChatIcon)
       }}
     >
-      <Chat className="mt-8" />
-    </motion.div>
+      <Chat className="mt-8 w-[336px] !shrink" />
+    </motion.section>
   )
 }
 
@@ -83,7 +84,7 @@ function Buttons() {
         type: 'fade',
         delay: chatAnimationDelays.buttons,
       })}
-      className="mt-16 flex flex-col gap-3"
+      className="mt-16 flex w-full flex-col gap-3"
       onAnimationComplete={() => {
         addCompletedAnimation(AnimationName.Buttons)
       }}

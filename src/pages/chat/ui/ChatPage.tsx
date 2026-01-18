@@ -1,3 +1,4 @@
+import { PageContent } from '@/shared/ui'
 import { useBottomNavVisibility } from '@/shared/ui/bottom-nav'
 
 import { AnimationName } from './animations'
@@ -17,7 +18,9 @@ function ChatPage() {
   return (
     <section className="mx-auto w-full max-w-[400px]">
       <Header />
-      <Content />
+      <PageContent>
+        <Content className="px-4" />
+      </PageContent>
     </section>
   )
 }
