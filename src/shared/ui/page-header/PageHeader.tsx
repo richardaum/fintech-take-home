@@ -12,6 +12,10 @@ type PageHeaderProps = {
 function PageHeader({ title, animationName, delay = 0 }: PageHeaderProps) {
   const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
 
+  function handleBackClick() {
+    window.history.back()
+  }
+
   return (
     <motion.header
       {...animationManager.getAnimationProps({
@@ -23,7 +27,14 @@ function PageHeader({ title, animationName, delay = 0 }: PageHeaderProps) {
         addCompletedAnimation(animationName)
       }}
     >
-      <AngleLeftIcon className="absolute left-2 size-6" />
+      <button
+        type="button"
+        onClick={handleBackClick}
+        className="absolute left-2 flex items-center justify-center"
+        aria-label="Go back"
+      >
+        <AngleLeftIcon className="size-6" />
+      </button>
       <h1 className="text-headline-small font-medium">{title}</h1>
     </motion.header>
   )
