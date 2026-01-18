@@ -1,7 +1,7 @@
 import { type Transaction, useWalletQuery } from '@/entities/wallet'
 import { AngleRightSmallIcon } from '@/shared/icons'
 import { cn, formatCurrency } from '@/shared/lib'
-import { Divider } from '@/shared/ui'
+import { CircleIcon, Divider } from '@/shared/ui'
 
 import { TYPE_MAPPING } from './typeMapping'
 
@@ -41,14 +41,7 @@ function ListItem({
     <>
       <li className="flex items-center">
         <div className="flex items-center gap-2">
-          <div
-            className={cn(
-              style,
-              'flex size-10 items-center justify-center rounded-full'
-            )}
-          >
-            <Icon className="size-6" />
-          </div>
+          <CircleIcon icon={Icon} size={40} iconSize={24} className={style} />
           <span className="text-label-medium">{label}</span>
         </div>
 

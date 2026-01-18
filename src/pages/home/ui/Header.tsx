@@ -12,7 +12,7 @@ function Header() {
         backgroundImage: `url(${headerBackground})`,
       }}
     >
-      <div className="w-full max-w-[400px]">
+      <div className="w-full max-w-[400px] px-4">
         <HeaderTopbar />
         <HeaderWallet className="mt-6" />
         <HeaderActions className="mt-12 mb-[-44px]" />
