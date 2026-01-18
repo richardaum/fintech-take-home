@@ -1,6 +1,6 @@
 import type { TransactionType } from '@/entities/wallet'
 import * as Icons from '@/shared/icons'
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 
 export const TYPE_MAPPING: Record<
   TransactionType,

@@ -1,6 +1,6 @@
 import type { ImgHTMLAttributes } from 'react'
 
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 
 type AvatarProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> & {
   src: string

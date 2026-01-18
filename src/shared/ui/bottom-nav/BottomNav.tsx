@@ -15,8 +15,8 @@ import {
   UserFilledIcon,
   UserOutlinedIcon,
 } from '@/shared/icons'
-import { cn } from '@/shared/lib'
 import { animationManager, useAnimationStore } from '@/shared/lib/animations'
+import { cn } from '@/shared/lib/cn'
 
 import { Button } from '../button'
 

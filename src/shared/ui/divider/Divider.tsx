@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from 'react'
 
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 
 type DividerProps = HTMLAttributes<HTMLHRElement> & {
   orientation?: 'horizontal' | 'vertical'

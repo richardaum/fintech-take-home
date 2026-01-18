@@ -9,7 +9,7 @@ import Select, {
 import { AutoSizer, CellMeasurer, CellMeasurerCache, List, type ListRowProps } from 'react-virtualized'
 
 import { AngleDownIcon, CheckIcon } from '@/shared/icons'
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 import { CircleIcon } from '@/shared/ui'
 
 import { FLAG_TO_CURRENCY } from './currencyMapping'

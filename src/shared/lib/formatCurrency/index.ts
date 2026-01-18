@@ -175,7 +175,6 @@ const CURRENCY_CODE_MAP: Record<string, string> = {
   ML: 'XOF',
   MN: 'MNT',
   MR: 'MRU',
-  MS: 'XCD',
   MU: 'MUR',
   MV: 'MVR',
   MW: 'MWK',

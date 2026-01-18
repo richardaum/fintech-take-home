@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 
 export type SearchInputColorVariant = 'blue'
 

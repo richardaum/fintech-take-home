@@ -14,8 +14,8 @@ import {
   ShieldIcon,
   UserFilledIcon,
 } from '@/shared/icons'
-import { cn } from '@/shared/lib'
 import { animationManager, useAnimationStore } from '@/shared/lib/animations'
+import { cn } from '@/shared/lib/cn'
 import { CircleIcon, Divider, Toggle } from '@/shared/ui'
 
 import { AnimationName, profileAnimationDelays } from './animations'

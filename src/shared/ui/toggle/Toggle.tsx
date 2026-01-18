@@ -1,6 +1,6 @@
 import * as Switch from '@radix-ui/react-switch'
 
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 
 type ToggleProps = {
   checked?: boolean

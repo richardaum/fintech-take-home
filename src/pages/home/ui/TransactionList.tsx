@@ -1,6 +1,7 @@
 import { type Transaction, useWalletQuery } from '@/entities/wallet'
 import { AngleRightSmallIcon } from '@/shared/icons'
-import { cn, formatCurrency } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
+import { formatCurrency } from '@/shared/lib/formatCurrency'
 import { CircleIcon, Divider } from '@/shared/ui'
 
 import { TYPE_MAPPING } from './typeMapping'

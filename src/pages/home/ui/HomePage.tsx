@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 import { useBottomNavVisibility } from '@/shared/ui'
 
 import { AnimationName } from './animations'

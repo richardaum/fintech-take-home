@@ -1,4 +1,4 @@
-import { cn } from '@/shared/lib'
+import { cn } from '@/shared/lib/cn'
 
 import { ProfileSettingsList } from './ProfileSettingsList'
 import { UserCard } from './UserCard'
