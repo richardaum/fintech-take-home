@@ -1,9 +1,9 @@
-import type { ComponentType } from 'react'
+import type { ComponentType, CSSProperties } from 'react'
 
 import { cn } from '@/shared/lib'
 
 type CircleIconProps = {
-  icon: ComponentType<{ className?: string }>
+  icon: ComponentType<{ className?: string; style?: CSSProperties }>
   size?: number
   iconSize?: number
   className?: string

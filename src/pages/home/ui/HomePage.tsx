@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <>
       <Header />
-      <Content />
+      <Content className="mt-[44px]" />
       <BottomNav />
     </>
   )

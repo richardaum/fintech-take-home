@@ -1,2 +1,8 @@
-export type { Wallet, WalletData } from './model'
-export { useWalletQuery } from './model'
+export { mockWalletData } from './model/data'
+export type {
+  Transaction,
+  TransactionType,
+  Wallet,
+  WalletData,
+} from './model/types'
+export { useWalletQuery } from './model/useWalletQuery'
