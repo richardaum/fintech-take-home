@@ -45,9 +45,9 @@ function BottomNav() {
       {...animationManager.getAnimationProps({
         type: 'slideUp',
       })}
-      className="bg-bg sticky bottom-0 z-50 mx-auto h-16 w-full px-4"
+      className="sticky bottom-0 z-50 mx-auto mt-auto h-[calc(64px+16px)] w-full bg-transparent px-4 pt-4 backdrop-blur-md"
     >
-      <ul className="mx-auto mt-4 mb-0 flex max-w-[400px] items-center justify-around rounded-xl bg-gray-900">
+      <ul className="mx-auto mb-0 flex max-w-[400px] items-center justify-around rounded-xl bg-gray-900">
         <NavItem icon={ICONS.home} path="/" />
         <NavItem icon={ICONS.chartPie} path="/chart" notImplemented />
         <NavItem icon={ICONS.scanner} isPrimary path="/scanner" notImplemented />
