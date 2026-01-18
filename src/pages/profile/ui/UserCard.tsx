@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 import { useProfileQuery } from '@/entities/profile'
 import { EditIcon } from '@/shared/icons'
-import { animationManager, useAnimationStore } from '@/shared/lib'
+import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 import { Avatar } from '@/shared/ui'
 
 import { AnimationName, profileAnimationDelays } from './animations'

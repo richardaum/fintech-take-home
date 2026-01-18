@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 
 import { BellIcon, SearchIcon, TrophyStarIcon } from '@/shared/icons'
-import { animationManager, cn } from '@/shared/lib'
-import { useAnimationStore } from '@/shared/lib/useAnimationStore'
+import { cn } from '@/shared/lib'
+import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 import { Button, SearchInput } from '@/shared/ui'
 
 import { AnimationName, homeAnimationDelays } from './animations'

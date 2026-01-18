@@ -5,8 +5,8 @@ import {
   DollarReceiveCircleIcon,
   DollarSendCircleIcon,
 } from '@/shared/icons'
-import { animationManager, cn } from '@/shared/lib'
-import { useAnimationStore } from '@/shared/lib/useAnimationStore'
+import { cn } from '@/shared/lib'
+import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 import { Divider } from '@/shared/ui'
 
 import { AnimationName, homeAnimationDelays } from './animations'

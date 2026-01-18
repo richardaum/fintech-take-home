@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useShallow } from 'zustand/shallow'
 
-import { useAnimationStore } from '@/shared/lib/useAnimationStore'
+import { useAnimationStore } from '@/shared/lib/animations'
 
 /**
  * Controls the visibility of the bottom navigation bar.

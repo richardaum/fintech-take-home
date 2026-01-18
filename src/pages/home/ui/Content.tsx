@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
-import { animationManager, cn } from '@/shared/lib'
-import { useAnimationStore } from '@/shared/lib/useAnimationStore'
+import { cn } from '@/shared/lib'
+import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 
 import { AnimationName, homeAnimationDelays } from './animations'
 import { TransactionList } from './TransactionList'

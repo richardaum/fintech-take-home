@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 import { useWalletQuery } from '@/entities/wallet'
 import { WalletIcon } from '@/shared/icons'
-import { animationManager, cn, formatCurrency } from '@/shared/lib'
-import { useAnimationStore } from '@/shared/lib/useAnimationStore'
+import { cn, formatCurrency } from '@/shared/lib'
+import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 import { Button, CurrencySelect } from '@/shared/ui'
 
 import { AnimationName, homeAnimationDelays } from './animations'

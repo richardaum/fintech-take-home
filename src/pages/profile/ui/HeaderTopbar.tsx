@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion'
 
 import { AngleLeftIcon } from '@/shared/icons'
-import { animationManager } from '@/shared/lib'
-import { useAnimationStore } from '@/shared/lib/useAnimationStore'
+import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 
 import { AnimationName, profileAnimationDelays } from './animations'
 
