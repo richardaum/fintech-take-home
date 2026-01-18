@@ -18,7 +18,7 @@ function PageHeader({ title, animationName, delay = 0 }: PageHeaderProps) {
         type: 'fade',
         delay,
       })}
-      className="relative flex h-[42px] w-full items-center justify-center"
+      className="bg-bg sticky top-0 z-40 flex h-[42px] w-full items-center justify-center"
       onAnimationComplete={() => {
         addCompletedAnimation(animationName)
       }}

@@ -1,4 +1,5 @@
-import { PageContainer, PageContent, useBottomNavVisibility } from '@/shared/ui'
+import { PageContainer, PageContent } from '@/shared/ui'
+import { useBottomNavVisibility } from '@/shared/ui/bottom-nav'
 
 import { AnimationName } from './animations'
 import { Content } from './Content'
@@ -6,9 +7,8 @@ import { Header } from './Header'
 
 const EXPECTED_ANIMATIONS = [AnimationName.HeaderTopbar]
 
-function ProfilePage() {
+function MessagesPage() {
   useBottomNavVisibility({ expectedAnimations: EXPECTED_ANIMATIONS })
-
   return (
     <PageContainer>
       <Header />
@@ -19,4 +19,4 @@ function ProfilePage() {
   )
 }
 
-export { ProfilePage }
+export { MessagesPage }

@@ -45,18 +45,15 @@ function BottomNav() {
       {...animationManager.getAnimationProps({
         type: 'slideUp',
       })}
-      className="fixed right-0 bottom-[34px] left-0 z-50 mx-auto h-16 w-full max-w-[400px]"
+      className="bg-bg sticky bottom-0 z-50 mx-auto h-16 w-full px-4"
     >
-      <ul className="m-4 mb-0 flex items-center justify-around rounded-xl bg-gray-900">
+      <ul className="mx-auto mt-4 mb-0 flex max-w-[400px] items-center justify-around rounded-xl bg-gray-900">
         <NavItem icon={ICONS.home} path="/" />
         <NavItem icon={ICONS.chartPie} path="/chart" notImplemented />
         <NavItem icon={ICONS.scanner} isPrimary path="/scanner" notImplemented />
         <NavItem icon={ICONS.chat} path="/chat" />
         <NavItem icon={ICONS.user} path="/profile" />
       </ul>
-
-      {/* hide content when scrolling */}
-      <div className="bg-bg h-[34px] w-full" />
     </motion.nav>
   )
 }

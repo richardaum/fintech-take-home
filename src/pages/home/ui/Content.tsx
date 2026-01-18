@@ -15,7 +15,7 @@ function Content({ className }: { className?: string }) {
         type: 'fade',
         delay: homeAnimationDelays.content,
       })}
-      className={cn('mx-auto w-full max-w-[400px] px-4 pt-6', className)}
+      className={cn('mx-auto w-full max-w-[400px] pt-6', className)}
       onAnimationComplete={() => {
         addCompletedAnimation(AnimationName.Content)
       }}

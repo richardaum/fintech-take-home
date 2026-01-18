@@ -7,11 +7,8 @@ type PageContentProps = {
   className?: string
 }
 
-// Considers BottomNav height when setting the content padding bottom
-const bottomNavPadding = cn('pb-[calc(64px+34px)]')
-
 function PageContent({ children, className }: PageContentProps) {
-  return <section className={cn(bottomNavPadding, className)}>{children}</section>
+  return <section className={cn('px-4', className)}>{children}</section>
 }
 
 export { PageContent }

@@ -1,4 +1,4 @@
-import { PageContent } from '@/shared/ui'
+import { PageContainer, PageContent } from '@/shared/ui'
 import { useBottomNavVisibility } from '@/shared/ui/bottom-nav'
 
 import { AnimationName } from './animations'
@@ -16,12 +16,12 @@ const EXPECTED_ANIMATIONS = [
 function ChatPage() {
   useBottomNavVisibility({ expectedAnimations: EXPECTED_ANIMATIONS })
   return (
-    <section className="mx-auto w-full max-w-[400px]">
+    <PageContainer>
       <Header />
       <PageContent>
-        <Content className="px-4" />
+        <Content />
       </PageContent>
-    </section>
+    </PageContainer>
   )
 }
 

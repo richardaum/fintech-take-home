@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 import { Chat } from '@/shared/assets'
 import { ChatFilledIcon, QuestionCircleIcon } from '@/shared/icons'
@@ -77,6 +78,7 @@ function Description() {
 
 function Buttons() {
   const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
+  const navigate = useNavigate()
 
   return (
     <motion.section
@@ -89,7 +91,13 @@ function Buttons() {
         addCompletedAnimation(AnimationName.Buttons)
       }}
     >
-      <Button variant="primary" shape="round" leftSection={<ChatFilledIcon />} className="w-full">
+      <Button
+        variant="primary"
+        shape="round"
+        leftSection={<ChatFilledIcon />}
+        className="w-full"
+        onClick={() => navigate('/chat/messages')}
+      >
         Start Chat
       </Button>
 
