@@ -6,9 +6,13 @@
 
 - Default: Bun. Others are not allowed.
 
-# Code style:Functions
+# Code style: Functions
 
 Whenever possible and more readable, prefer regular functions at module-level over arrow functions.
+
+# Code styles Types vs Interfaces
+
+- Always use types instead of interfaces.
 
 # Tailwind 4
 
