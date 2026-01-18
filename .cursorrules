@@ -18,3 +18,8 @@ Whenever possible and more readable, prefer regular functions at module-level ov
 
 - Search on the web for Tailwind 4 documentation and examples.
 - When the classes become a long string, use the `cn` function to split them into smaller strings.
+
+# Index Files
+
+- Index files (`index.ts`, `index.tsx`) should only contain exports or imports, not implementation code.
+- Implementation code should be moved to separate files and exported from the index file.
