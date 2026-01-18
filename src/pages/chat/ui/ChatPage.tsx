@@ -6,9 +6,9 @@ import { Header } from './Header'
 function ChatPage() {
   return (
     <>
-      <BottomNav />
       <Header />
       <Content />
+      <BottomNav />
     </>
   )
 }

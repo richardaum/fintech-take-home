@@ -1,7 +1,7 @@
 import { BottomNav } from '@/shared/ui'
 
 import { Content } from './Content'
-import { Header } from './Header'
+import { Header } from './header'
 
 function HomePage() {
   return (

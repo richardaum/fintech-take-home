@@ -1,24 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
+@import 'react-virtualized/styles.css';
 @import './tokens.css';
-
-/* Base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 body {
   font-family: var(--font-family-sans);
   line-height: 1.5;
   font-weight: 400;
   color-scheme: dark;
-  color: var(--color-text-primary);
-  background-color: var(--color-dark);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  color: var(--color-content-primary);
+  background-color: var(--color-bg-dark);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
+  font-smooth: never;
+}
+
+svg {
+  flex-shrink: 0;
 }

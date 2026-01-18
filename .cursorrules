@@ -1,7 +1,17 @@
-# Project Rules
+# Guidelines
 
-This file references detailed documentation files in the `/docs` directory.
+- Check the documentation files in the `/docs` directory for instructions and guidelines.
 
-## Feature-Sliced Design (FSD)
+# Package Manager
 
-See [docs/fsd.md](./docs/fsd.md) for FSD architecture rules and guidelines.
+- Default: Bun. Others are not allowed.
+
+# Code style:Functions
+
+Whenever possible and more readable, prefer regular functions at module-level over arrow functions.
+
+# Tailwind 4
+
+- See [docs/tw4.md](./docs/tw4.md) for Tailwind 4 rules and guidelines.
+- Search on the web for Tailwind 4 documentation and examples.
+- When the classes become a long string, use the `cn` function to split them into smaller strings.
