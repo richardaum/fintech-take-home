@@ -1,40 +1,36 @@
-import { useEffect, useRef } from 'react'
+import { useMemo } from 'react'
 
 import { useChatQuery } from '@/entities/chat'
 import { cn } from '@/shared/lib/cn'
 
-import { groupMessagesBy5Minutes } from './groupMessagesBy5Minutes'
-import { groupMessagesByDay } from './groupMessagesByDay'
+import { groupConsecutiveMessages } from '../../lib/groupConsecutiveMessages'
+import { groupMessagesBy5Minutes } from '../../lib/groupMessagesBy5Minutes'
+import { groupMessagesByDay } from '../../lib/groupMessagesByDay'
 import { MessageGroup } from './MessageGroup'
 import { TimeLabel } from './TimeLabel'
 
 function Content({ className }: { className?: string }) {
   const { data } = useChatQuery()
-  const previousCountRef = useRef(0)
 
-  const currentCount = data?.messages.length ?? 0
-
-  useEffect(() => {
-    if (data) {
-      previousCountRef.current = currentCount
+  const groupedMessages = useMemo(() => {
+    if (!data) {
+      return []
     }
-  }, [currentCount, data])
+
+    const groupedByDay = groupMessagesByDay(data.messages)
+
+    return groupedByDay.map((group) => ({
+      ...group,
+      minuteGroups: groupMessagesBy5Minutes(group.messages).map((minuteGroup) => ({
+        ...minuteGroup,
+        messageGroups: groupConsecutiveMessages(minuteGroup.messages),
+      })),
+    }))
+  }, [data])
 
   if (!data) {
     return null
   }
-
-  const groupedByDay = groupMessagesByDay(data.messages)
-
-  const groupedMessages = groupedByDay.map((group) => ({
-    ...group,
-    minuteGroups: groupMessagesBy5Minutes(group.messages),
-  }))
-
-  const previousCount = previousCountRef.current
-  const hasNewMessages = currentCount > previousCount
-
-  let messageIndex = 0
 
   return (
     <main className={cn('flex flex-1 flex-col items-start gap-6 px-1', className)}>
@@ -44,20 +40,16 @@ function Content({ className }: { className?: string }) {
             <TimeLabel time={group.timeLabel} />
             {group.minuteGroups.map((minuteGroup) => (
               <section key={minuteGroup.minuteKey} className="flex flex-col gap-2">
-                {minuteGroup.messages.map((chatMessage, index) => {
-                  const isNew = hasNewMessages && messageIndex >= previousCount
-                  messageIndex++
-                  return (
-                    <MessageGroup
-                      key={index}
-                      type={chatMessage.type}
-                      senderName={chatMessage.senderName}
-                      messages={chatMessage.messages}
-                      timestamp={index === minuteGroup.messages.length - 1 ? minuteGroup.timestamp : undefined}
-                      isNew={isNew}
-                    />
-                  )
-                })}
+                {minuteGroup.messageGroups.map((messageGroup, groupIndex) => (
+                  <MessageGroup
+                    key={groupIndex}
+                    type={messageGroup.type}
+                    senderName={messageGroup.senderName}
+                    messages={messageGroup.messages}
+                    timestamp={groupIndex === minuteGroup.messageGroups.length - 1 ? minuteGroup.timestamp : undefined}
+                    isNew
+                  />
+                ))}
               </section>
             ))}
           </section>

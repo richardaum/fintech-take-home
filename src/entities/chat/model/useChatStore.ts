@@ -15,18 +15,8 @@ export const useChatStore = create<ChatStore>((set) => ({
     await new Promise((resolve) => setTimeout(resolve, 300))
 
     const newMessage: ChatMessage = {
-      time: new Date().toLocaleString('en-US', {
-        weekday: 'long',
-        hour: 'numeric',
-        minute: 'numeric',
-        hour12: true,
-      }),
+      text,
       type: 'outgoing',
-      messages: [
-        {
-          text,
-        },
-      ],
       timestamp: new Date().toISOString(),
     }
 

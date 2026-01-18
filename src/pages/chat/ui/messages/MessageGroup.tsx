@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-import type { Message, MessageType } from '@/entities/chat'
+import type { ChatMessage, MessageType } from '@/entities/chat'
 import { cn } from '@/shared/lib/cn'
 import { Timestamp } from '@/shared/ui'
 
@@ -10,7 +10,7 @@ import { MessageBubble } from './MessageBubble'
 type MessageGroupProps = {
   type: MessageType
   senderName?: string
-  messages: Message[]
+  messages: ChatMessage[]
   timestamp?: string
   isNew?: boolean
   className?: string

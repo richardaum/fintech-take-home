@@ -7,13 +7,7 @@ export type MinuteGroupedMessage = {
 }
 
 export function groupMessagesBy5Minutes(messages: ChatMessage[]): MinuteGroupedMessage[] {
-  let noTimestampIndex = 0
-
   const grouped = Object.groupBy(messages, (message: ChatMessage) => {
-    if (!message.timestamp) {
-      return `no-timestamp-${noTimestampIndex++}`
-    }
-
     const date = new Date(message.timestamp)
     date.setSeconds(0, 0)
     const minutes = date.getMinutes()
@@ -26,7 +20,7 @@ export function groupMessagesBy5Minutes(messages: ChatMessage[]): MinuteGroupedM
     const messageArray = messages as ChatMessage[]
     return {
       minuteKey,
-      timestamp: messageArray[0]?.timestamp || '',
+      timestamp: messageArray[0].timestamp,
       messages: messageArray,
     }
   })

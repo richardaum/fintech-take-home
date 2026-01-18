@@ -1,15 +1,10 @@
-export type Message = {
-  text: string
-}
-
 export type MessageType = 'incoming' | 'outgoing'
 
 export type ChatMessage = {
-  time: string
+  text: string
   type: MessageType
   senderName?: string
-  messages: Message[]
-  timestamp?: string
+  timestamp: string
 }
 
 export type Chat = {
