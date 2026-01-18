@@ -31,3 +31,9 @@ Each slice folder should contain:
 - `lib/`: Internal utils.
 - `api/`: Requests (if applicable).
 - `index.ts`: The public API.
+
+## Barrel Exports
+
+- Only the top-level slice folder should have an `index.ts` file.
+- Avoid nested barrel exports (e.g., `model/index.ts`, `ui/index.ts`).
+- Export directly from source files in the top-level `index.ts`.
