@@ -22,6 +22,7 @@ function SearchInput({ placeholder, colorVariant, leftSection }: SearchInputProp
         className={cn(
           'w-full min-w-0 text-white',
           'text-label-small font-regular',
+          'focus:outline focus:outline-white',
           leftSection && 'pl-10',
           colorVariant && SEARCH_INPUT_COLOR_VARIANTS[colorVariant]
         )}
