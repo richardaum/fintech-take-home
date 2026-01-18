@@ -2,12 +2,7 @@ import type { TargetAndTransition, Transition } from 'framer-motion'
 
 import { animationTransition } from './animations'
 
-type AnimationType =
-  | 'fade'
-  | 'slideUp'
-  | 'slideDown'
-  | 'slideLeft'
-  | 'slideRight'
+type AnimationType = 'fade' | 'slideUp' | 'slideDown' | 'slideLeft' | 'slideRight'
 
 type AnimationConfig = {
   type?: AnimationType

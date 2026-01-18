@@ -13,17 +13,8 @@ import { useAnimationStore } from '@/shared/lib/animations'
  * @param expectedAnimations - Array of animation IDs that must complete before showing the bottom nav.
  *                             If empty, the bottom nav will be shown immediately.
  */
-function useBottomNavVisibility({
-  expectedAnimations,
-}: {
-  expectedAnimations: string[]
-}) {
-  const {
-    setShowBottomNav,
-    completedAnimations,
-    clearAll,
-    setExpectedAnimations,
-  } = useAnimationStore(
+function useBottomNavVisibility({ expectedAnimations }: { expectedAnimations: string[] }) {
+  const { setShowBottomNav, completedAnimations, clearAll, setExpectedAnimations } = useAnimationStore(
     useShallow((state) => ({
       setShowBottomNav: state.setShowBottomNav,
       completedAnimations: state.completedAnimations,
@@ -34,9 +25,7 @@ function useBottomNavVisibility({
 
   // Show bottom nav when all expected animations have completed
   useEffect(() => {
-    const showBottomNav = expectedAnimations.every((animation) =>
-      completedAnimations.includes(animation)
-    )
+    const showBottomNav = expectedAnimations.every((animation) => completedAnimations.includes(animation))
 
     if (showBottomNav) setShowBottomNav(true)
   }, [completedAnimations, setShowBottomNav, expectedAnimations])

@@ -12,18 +12,10 @@ type SearchInputProps = {
   colorVariant?: SearchInputColorVariant
 }
 
-function SearchInput({
-  placeholder,
-  colorVariant,
-  leftSection,
-}: SearchInputProps) {
+function SearchInput({ placeholder, colorVariant, leftSection }: SearchInputProps) {
   return (
     <div className="relative flex-1">
-      {leftSection && (
-        <div className="absolute top-1/2 left-2 -translate-y-1/2">
-          {leftSection}
-        </div>
-      )}
+      {leftSection && <div className="absolute top-1/2 left-2 -translate-y-1/2">{leftSection}</div>}
       <input
         autoComplete="off"
         name="search"

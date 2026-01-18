@@ -6,13 +6,7 @@ import Select, {
   type OptionProps,
   type SingleValue,
 } from 'react-select'
-import {
-  AutoSizer,
-  CellMeasurer,
-  CellMeasurerCache,
-  List,
-  type ListRowProps,
-} from 'react-virtualized'
+import { AutoSizer, CellMeasurer, CellMeasurerCache, List, type ListRowProps } from 'react-virtualized'
 
 import { AngleDownIcon, CheckIcon } from '@/shared/icons'
 import { cn } from '@/shared/lib'
@@ -27,22 +21,14 @@ type CurrencySelectProps = {
   defaultValue?: string
 }
 
-function CurrencySelect({
-  value,
-  onValueChange,
-  defaultValue,
-}: CurrencySelectProps) {
-  const currencies = Object.entries(FLAG_TO_CURRENCY).sort((a, b) =>
-    a[1].currency.localeCompare(b[1].currency)
-  )
+function CurrencySelect({ value, onValueChange, defaultValue }: CurrencySelectProps) {
+  const currencies = Object.entries(FLAG_TO_CURRENCY).sort((a, b) => a[1].currency.localeCompare(b[1].currency))
 
-  const options: CurrencyOption[] = currencies.map(
-    ([code, { currency, icon }]) => ({
-      value: code,
-      label: currency,
-      icon,
-    })
-  )
+  const options: CurrencyOption[] = currencies.map(([code, { currency, icon }]) => ({
+    value: code,
+    label: currency,
+    icon,
+  }))
 
   const selectedOption = options.find((opt) => opt.value === value)
   const defaultValueOption = options.find((opt) => opt.value === defaultValue)
@@ -65,10 +51,7 @@ function CurrencySelect({
       classNamePrefix="react-select"
       unstyled
       classNames={{
-        menu: () =>
-          cn(
-            'bg-bg mt-1 w-64 rounded px-2 py-3 drop-shadow-[0px_3px_10px_rgba(0,0,0,0.12)]'
-          ),
+        menu: () => cn('bg-bg mt-1 w-64 rounded px-2 py-3 drop-shadow-[0px_3px_10px_rgba(0,0,0,0.12)]'),
         singleValue: () => cn('m-0'),
       }}
       styles={{
@@ -121,15 +104,10 @@ function ClearIndicator() {
   return null
 }
 
-function MenuList(
-  props: MenuListProps<CurrencyOption, false, GroupBase<CurrencyOption>>
-) {
+function MenuList(props: MenuListProps<CurrencyOption, false, GroupBase<CurrencyOption>>) {
   const { children, maxHeight } = props
 
-  const cellCache = useMemo(
-    () => new CellMeasurerCache({ fixedWidth: true, defaultHeight: 24 }),
-    []
-  )
+  const cellCache = useMemo(() => new CellMeasurerCache({ fixedWidth: true, defaultHeight: 24 }), [])
 
   const rows = children
 
@@ -138,13 +116,7 @@ function MenuList(
   }
 
   const rowRenderer = ({ key, parent, index, style }: ListRowProps) => (
-    <CellMeasurer
-      cache={cellCache}
-      key={key}
-      columnIndex={0}
-      rowIndex={index}
-      parent={parent}
-    >
+    <CellMeasurer cache={cellCache} key={key} columnIndex={0} rowIndex={index} parent={parent}>
       <div key={key} style={style}>
         {rows[index]}
       </div>

@@ -5,8 +5,7 @@ export const AnimationName = {
   Content: 'Content',
 } as const
 
-export type AnimationNameType =
-  (typeof AnimationName)[keyof typeof AnimationName]
+export type AnimationNameType = (typeof AnimationName)[keyof typeof AnimationName]
 
 export const homeAnimationDelays = {
   header: 0,

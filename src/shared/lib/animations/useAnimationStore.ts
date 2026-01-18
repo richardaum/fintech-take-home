@@ -13,8 +13,7 @@ type AnimationStore = {
 export const useAnimationStore = create<AnimationStore>((set) => ({
   clearAll: () => set({ expectedAnimations: [], completedAnimations: [] }),
   expectedAnimations: [],
-  setExpectedAnimations: (animations: string[]) =>
-    set({ expectedAnimations: animations }),
+  setExpectedAnimations: (animations: string[]) => set({ expectedAnimations: animations }),
   completedAnimations: [],
   addCompletedAnimation: (animation: string) =>
     set((state) => ({

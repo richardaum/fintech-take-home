@@ -11,9 +11,7 @@ import { AnimationName, homeAnimationDelays } from './animations'
 
 function HeaderWallet({ className }: { className?: string }) {
   const { data } = useWalletQuery()
-  const addCompletedAnimation = useAnimationStore(
-    (state) => state.addCompletedAnimation
-  )
+  const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
   const [currency, setCurrency] = useState<string | undefined>(data?.currency)
 
   return (
@@ -38,9 +36,7 @@ function HeaderWallet({ className }: { className?: string }) {
         {data && currency ? formatCurrency(data.amount, currency) : ''}
       </div>
 
-      <span className="text-body-small text-content-tertiary mt-1">
-        Available Balance
-      </span>
+      <span className="text-body-small text-content-tertiary mt-1">Available Balance</span>
 
       <Button className="mt-4" leftSection={<WalletIcon className="size-4" />}>
         Add Money

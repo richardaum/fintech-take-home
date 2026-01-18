@@ -19,24 +19,14 @@ function TransactionList({ className }: { className?: string }) {
 
       <ul className="rounded-xl bg-gray-900 p-4">
         {data?.transactions.map((transaction) => (
-          <ListItem
-            key={transaction.id}
-            transaction={transaction}
-            currency={data?.currency}
-          />
+          <ListItem key={transaction.id} transaction={transaction} currency={data?.currency} />
         ))}
       </ul>
     </section>
   )
 }
 
-function ListItem({
-  transaction,
-  currency,
-}: {
-  transaction: Transaction
-  currency: string
-}) {
+function ListItem({ transaction, currency }: { transaction: Transaction; currency: string }) {
   const { icon: Icon, style, label } = TYPE_MAPPING[transaction.type]
 
   return (

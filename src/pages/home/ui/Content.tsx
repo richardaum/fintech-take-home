@@ -7,9 +7,7 @@ import { AnimationName, homeAnimationDelays } from './animations'
 import { TransactionList } from './TransactionList'
 
 function Content({ className }: { className?: string }) {
-  const addCompletedAnimation = useAnimationStore(
-    (state) => state.addCompletedAnimation
-  )
+  const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
 
   return (
     <motion.main

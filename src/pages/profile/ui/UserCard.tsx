@@ -9,9 +9,7 @@ import { AnimationName, profileAnimationDelays } from './animations'
 
 function UserCard() {
   const { data } = useProfileQuery()
-  const addCompletedAnimation = useAnimationStore(
-    (state) => state.addCompletedAnimation
-  )
+  const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
 
   return (
     <motion.section
@@ -29,15 +27,9 @@ function UserCard() {
       <EditIcon className="text-content-disabled absolute top-4 right-4 size-6" />
 
       <section className="flex flex-col gap-1">
-        <span className="text-subhead-large text-content-secondary">
-          {data.fullName}
-        </span>
-        <span className="text-body-small text-content-tertiary">
-          {data.email}
-        </span>
-        <span className="text-body-small text-content-tertiary">
-          {data.phoneNumber}
-        </span>
+        <span className="text-subhead-large text-content-secondary">{data.fullName}</span>
+        <span className="text-body-small text-content-tertiary">{data.email}</span>
+        <span className="text-body-small text-content-tertiary">{data.phoneNumber}</span>
       </section>
     </motion.section>
   )

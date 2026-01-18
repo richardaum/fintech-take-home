@@ -9,18 +9,10 @@ type CircleIconProps = {
   className?: string
 }
 
-function CircleIcon({
-  icon: Icon,
-  size = 12,
-  iconSize = 20,
-  className,
-}: CircleIconProps) {
+function CircleIcon({ icon: Icon, size = 12, iconSize = 20, className }: CircleIconProps) {
   return (
     <div
-      className={cn(
-        'flex items-center justify-center overflow-hidden rounded-full',
-        className
-      )}
+      className={cn('flex items-center justify-center overflow-hidden rounded-full', className)}
       style={{ width: size, height: size }}
     >
       <Icon style={{ width: iconSize, height: iconSize }} />

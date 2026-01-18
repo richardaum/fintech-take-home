@@ -7,24 +7,10 @@ type AvatarProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'> & {
   size?: number
 }
 
-function Avatar({
-  src,
-  size = 40,
-  className,
-  alt = '',
-  ...props
-}: AvatarProps) {
+function Avatar({ src, size = 40, className, alt = '', ...props }: AvatarProps) {
   return (
-    <div
-      className={cn('overflow-hidden rounded-full', className)}
-      style={{ width: size, height: size }}
-    >
-      <img
-        src={src}
-        alt={alt}
-        className="h-full w-full object-cover"
-        {...props}
-      />
+    <div className={cn('overflow-hidden rounded-full', className)} style={{ width: size, height: size }}>
+      <img src={src} alt={alt} className="h-full w-full object-cover" {...props} />
     </div>
   )
 }

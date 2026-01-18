@@ -6,9 +6,7 @@ import { animationManager, useAnimationStore } from '@/shared/lib/animations'
 import { AnimationName, profileAnimationDelays } from './animations'
 
 function HeaderTopbar() {
-  const addCompletedAnimation = useAnimationStore(
-    (state) => state.addCompletedAnimation
-  )
+  const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
 
   return (
     <motion.header

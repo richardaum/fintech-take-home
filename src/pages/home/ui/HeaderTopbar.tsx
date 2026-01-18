@@ -8,9 +8,7 @@ import { Button, SearchInput } from '@/shared/ui'
 import { AnimationName, homeAnimationDelays } from './animations'
 
 function HeaderTopbar({ className }: { className?: string }) {
-  const addCompletedAnimation = useAnimationStore(
-    (state) => state.addCompletedAnimation
-  )
+  const addCompletedAnimation = useAnimationStore((state) => state.addCompletedAnimation)
 
   return (
     <motion.div
@@ -18,10 +16,7 @@ function HeaderTopbar({ className }: { className?: string }) {
         type: 'slideDown',
         delay: homeAnimationDelays.header,
       })}
-      className={cn(
-        'flex w-full items-center justify-between gap-8',
-        className
-      )}
+      className={cn('flex w-full items-center justify-between gap-8', className)}
       onAnimationComplete={() => {
         addCompletedAnimation(AnimationName.HeaderTopbar)
       }}
@@ -30,11 +25,7 @@ function HeaderTopbar({ className }: { className?: string }) {
         <TrophyStarIcon className="size-6" />
       </Button>
 
-      <SearchInput
-        colorVariant="blue"
-        leftSection={<SearchIcon />}
-        placeholder={`Search "Payments"`}
-      />
+      <SearchInput colorVariant="blue" leftSection={<SearchIcon />} placeholder={`Search "Payments"`} />
 
       <Button variant="ghost" size="thin">
         <BellIcon className="size-6" />

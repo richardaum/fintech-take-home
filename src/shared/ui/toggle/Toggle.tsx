@@ -10,13 +10,7 @@ type ToggleProps = {
   className?: string
 }
 
-function Toggle({
-  checked,
-  defaultChecked,
-  onCheckedChange,
-  disabled = false,
-  className,
-}: ToggleProps) {
+function Toggle({ checked, defaultChecked, onCheckedChange, disabled = false, className }: ToggleProps) {
   return (
     <Switch.Root
       checked={checked}

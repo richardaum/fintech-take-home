@@ -50,12 +50,7 @@ function BottomNav() {
       <ul className="m-4 mb-0 flex items-center justify-around rounded-xl bg-gray-900">
         <NavItem icon={ICONS.home} path="/" />
         <NavItem icon={ICONS.chartPie} path="/chart" notImplemented />
-        <NavItem
-          icon={ICONS.scanner}
-          isPrimary
-          path="/scanner"
-          notImplemented
-        />
+        <NavItem icon={ICONS.scanner} isPrimary path="/scanner" notImplemented />
         <NavItem icon={ICONS.chat} path="/chat" />
         <NavItem icon={ICONS.user} path="/profile" />
       </ul>
@@ -105,9 +100,7 @@ function NavItem({
           tabIndex={-1}
         >
           <IconComponent className={cn(isActive && 'text-bg-accent')} />
-          {isActive && (
-            <div className="bg-bg-accent absolute bottom-3 left-1/2 size-1 -translate-x-1/2 rounded-full" />
-          )}
+          {isActive && <div className="bg-bg-accent absolute bottom-3 left-1/2 size-1 -translate-x-1/2 rounded-full" />}
         </Button>
       </Link>
     </li>

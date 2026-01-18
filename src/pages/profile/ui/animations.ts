@@ -4,8 +4,7 @@ export const AnimationName = {
   SettingsList: 'ProfileSettingsList',
 } as const
 
-export type AnimationNameType =
-  (typeof AnimationName)[keyof typeof AnimationName]
+export type AnimationNameType = (typeof AnimationName)[keyof typeof AnimationName]
 
 export const profileAnimationDelays = {
   header: 0,
