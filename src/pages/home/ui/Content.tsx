@@ -4,7 +4,7 @@ import { animationManager, cn } from '@/shared/lib'
 import { useAnimationStore } from '@/shared/lib/useAnimationStore'
 
 import { AnimationName, homeAnimationDelays } from './animations'
-import { TransactionList } from './transaction-list/TransactionList'
+import { TransactionList } from './TransactionList'
 
 function Content({ className }: { className?: string }) {
   const addCompletedAnimation = useAnimationStore(

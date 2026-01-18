@@ -9,7 +9,7 @@ import { animationManager, cn } from '@/shared/lib'
 import { useAnimationStore } from '@/shared/lib/useAnimationStore'
 import { Divider } from '@/shared/ui'
 
-import { AnimationName, homeAnimationDelays } from '../animations'
+import { AnimationName, homeAnimationDelays } from './animations'
 
 function HeaderActions({ className }: { className?: string }) {
   const addCompletedAnimation = useAnimationStore(

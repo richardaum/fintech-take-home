@@ -3,7 +3,7 @@ import { useBottomNavVisibility } from '@/shared/ui'
 
 import { AnimationName } from './animations'
 import { Content } from './Content'
-import { Header } from './header/Header'
+import { Header } from './Header'
 
 // Considers BottomNav height when setting the content padding bottom
 const bottomNavPadding = cn('pb-[calc(64px+34px)]')

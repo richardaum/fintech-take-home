@@ -7,7 +7,7 @@ import { animationManager, cn, formatCurrency } from '@/shared/lib'
 import { useAnimationStore } from '@/shared/lib/useAnimationStore'
 import { Button, CurrencySelect } from '@/shared/ui'
 
-import { AnimationName, homeAnimationDelays } from '../animations'
+import { AnimationName, homeAnimationDelays } from './animations'
 
 function HeaderWallet({ className }: { className?: string }) {
   const { data } = useWalletQuery()
