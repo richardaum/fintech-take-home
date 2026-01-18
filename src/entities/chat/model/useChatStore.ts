@@ -25,7 +25,6 @@ export const useChatStore = create<ChatStore>((set) => ({
       messages: [
         {
           text,
-          height: 'auto',
         },
       ],
       timestamp: new Date().toISOString(),

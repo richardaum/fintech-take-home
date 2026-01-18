@@ -12,7 +12,10 @@ function Avatar({ src, size = 40, className, alt = '', ...props }: AvatarProps) 
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (
-    <div className={cn('relative overflow-hidden rounded-full', className)} style={{ width: size, height: size }}>
+    <div
+      className={cn('relative shrink-0 overflow-hidden rounded-full', className)}
+      style={{ width: size, height: size }}
+    >
       {!isLoaded && <div className="absolute inset-0 animate-pulse bg-gray-800" />}
       <img
         src={src}

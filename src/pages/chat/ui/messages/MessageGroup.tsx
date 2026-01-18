@@ -29,14 +29,14 @@ function MessageGroup({ type, senderName, messages, timestamp, isNew = false, cl
       className={cn('flex w-full flex-col items-start', isIncoming ? 'pr-[77px]' : 'pl-[77px]', className)}
     >
       <div className={cn('flex w-full flex-row items-end gap-3', !isIncoming && 'flex-row-reverse')}>
-        <BotAvatar />
+        <BotAvatar type={type} />
 
         <div className="flex flex-col items-start gap-2">
           {senderName && <div className="text-body-small text-content-disabled h-4">{senderName}</div>}
 
           <div className="flex w-full flex-col items-start gap-2">
             {messages.map((message, index) => (
-              <MessageBubble key={index} height={message.height} type={type}>
+              <MessageBubble key={index} type={type}>
                 {message.text}
               </MessageBubble>
             ))}

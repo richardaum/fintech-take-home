@@ -9,19 +9,15 @@ export const mockChatData: Chat = {
       messages: [
         {
           text: 'Welcome to CoinPay support! How can we assist you today?',
-          height: '64px',
         },
         {
           text: 'What is your question regarding?',
-          height: '48px',
         },
         {
           text: 'Are you having a problem with a specific feature?',
-          height: '64px',
         },
         {
           text: 'Have you tried troubleshooting steps we provided in FAQ or other documentation?',
-          height: '80px',
         },
       ],
       timestamp: '2026-01-18T10:00:00-03:00',

@@ -1,6 +1,5 @@
 export type Message = {
   text: string
-  height?: string
 }
 
 export type MessageType = 'incoming' | 'outgoing'

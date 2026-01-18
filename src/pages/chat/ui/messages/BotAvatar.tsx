@@ -1,21 +1,17 @@
-import { ChatFilledIcon } from '@/shared/icons'
-import { cn } from '@/shared/lib/cn'
+import type { MessageType } from '@/entities/chat'
+import { useProfileQuery } from '@/entities/profile'
+import chatbotImage from '@/shared/assets/chatbot.png'
+import { Avatar } from '@/shared/ui'
 
 type BotAvatarProps = {
+  type: MessageType
   className?: string
 }
 
-function BotAvatar({ className }: BotAvatarProps) {
-  return (
-    <div
-      className={cn(
-        'border-content-accent flex h-8 w-8 flex-none items-center justify-center rounded-full border-[1.5px] bg-gray-900',
-        className
-      )}
-    >
-      <ChatFilledIcon className="text-content-accent h-4 w-4" />
-    </div>
-  )
+function BotAvatar({ type, className }: BotAvatarProps) {
+  const { data: profile } = useProfileQuery()
+  const avatarSrc = type === 'incoming' ? chatbotImage : profile?.avatar
+  return <Avatar src={avatarSrc} size={32} className={className} />
 }
 
 export { BotAvatar }
