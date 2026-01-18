@@ -1,5 +1,3 @@
-import { BottomNav } from '@/shared/ui'
-
 import { Content } from './Content'
 import { Header } from './Header'
 
@@ -8,7 +6,6 @@ function ChatPage() {
     <>
       <Header />
       <Content />
-      <BottomNav />
     </>
   )
 }

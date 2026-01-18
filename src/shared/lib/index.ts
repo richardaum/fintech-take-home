@@ -1,4 +1,5 @@
-export { animationConfig, headerAnimations } from './animations'
+export { animationManager } from './AnimationManager'
+export { animationTransition } from './animations'
 export { cn } from './cn'
 export { formatCurrency } from './formatCurrency'
 export { useIntersectionObserver } from './useIntersectionObserver'

@@ -5,17 +5,29 @@ import {
   DollarReceiveCircleIcon,
   DollarSendCircleIcon,
 } from '@/shared/icons'
-import { cn, headerAnimations } from '@/shared/lib'
+import { animationManager, cn } from '@/shared/lib'
+import { useAnimationStore } from '@/shared/lib/useAnimationStore'
 import { Divider } from '@/shared/ui'
 
+import { AnimationName, homeAnimationDelays } from '../animations'
+
 function HeaderActions({ className }: { className?: string }) {
+  const addCompletedAnimation = useAnimationStore(
+    (state) => state.addCompletedAnimation
+  )
   return (
     <motion.div
-      {...headerAnimations.actions}
+      {...animationManager.getAnimationProps({
+        type: 'slideUp',
+        delay: homeAnimationDelays.header,
+      })}
       className={cn(
         'flex w-full flex-1 items-center justify-around rounded-xl bg-gray-900 py-[18px]',
         className
       )}
+      onAnimationComplete={() => {
+        addCompletedAnimation(AnimationName.HeaderActions)
+      }}
     >
       <HeaderActionItem
         icon={DollarSendCircleIcon}

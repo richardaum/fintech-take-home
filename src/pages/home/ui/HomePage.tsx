@@ -1,14 +1,27 @@
-import { BottomNav } from '@/shared/ui'
+import { cn } from '@/shared/lib'
+import { useBottomNavVisibility } from '@/shared/ui'
 
+import { AnimationName } from './animations'
 import { Content } from './Content'
-import { Header } from './header'
+import { Header } from './header/Header'
+
+// Considers BottomNav height when setting the content padding bottom
+const bottomNavPadding = cn('pb-[calc(64px+34px)]')
+
+const EXPECTED_ANIMATIONS = [
+  AnimationName.HeaderTopbar,
+  AnimationName.HeaderWallet,
+  AnimationName.HeaderActions,
+  AnimationName.Content,
+]
 
 function HomePage() {
+  useBottomNavVisibility({ expectedAnimations: EXPECTED_ANIMATIONS })
+
   return (
     <>
       <Header />
-      <Content className="mt-[44px]" />
-      <BottomNav />
+      <Content className={cn('mt-[44px]', bottomNavPadding)} />
     </>
   )
 }

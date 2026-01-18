@@ -3,18 +3,29 @@ import { useState } from 'react'
 
 import { useWalletQuery } from '@/entities/wallet'
 import { WalletIcon } from '@/shared/icons'
-import { cn, formatCurrency, headerAnimations } from '@/shared/lib'
+import { animationManager, cn, formatCurrency } from '@/shared/lib'
+import { useAnimationStore } from '@/shared/lib/useAnimationStore'
 import { Button, CurrencySelect } from '@/shared/ui'
+
+import { AnimationName, homeAnimationDelays } from '../animations'
 
 function HeaderWallet({ className }: { className?: string }) {
   const { data } = useWalletQuery()
-
+  const addCompletedAnimation = useAnimationStore(
+    (state) => state.addCompletedAnimation
+  )
   const [currency, setCurrency] = useState<string | undefined>(data?.currency)
 
   return (
     <motion.div
-      {...headerAnimations.wallet}
+      {...animationManager.getAnimationProps({
+        type: 'fade',
+        delay: homeAnimationDelays.header,
+      })}
       className={cn('flex flex-col items-center', className)}
+      onAnimationComplete={() => {
+        addCompletedAnimation(AnimationName.HeaderWallet)
+      }}
     >
       <CurrencySelect
         value={currency}

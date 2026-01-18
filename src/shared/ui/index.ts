@@ -1,4 +1,4 @@
-export { BottomNav } from './bottom-nav'
+export { BottomNav, useBottomNavVisibility } from './bottom-nav'
 export { Button } from './button'
 export { CircleIcon } from './circle-icon'
 export { CurrencySelect } from './currency-select'
