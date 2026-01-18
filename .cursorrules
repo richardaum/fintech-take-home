@@ -16,6 +16,5 @@ Whenever possible and more readable, prefer regular functions at module-level ov
 
 # Tailwind 4
 
-- See [docs/tw4.md](./docs/tw4.md) for Tailwind 4 rules and guidelines.
 - Search on the web for Tailwind 4 documentation and examples.
 - When the classes become a long string, use the `cn` function to split them into smaller strings.

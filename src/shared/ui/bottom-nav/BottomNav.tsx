@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import type { ComponentType, SVGProps } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useShallow } from 'zustand/shallow'
 
 import {
   ChartPieFilledIcon,
@@ -28,9 +29,14 @@ const ICONS = {
 }
 
 function BottomNav() {
-  const showBottomNav = useAnimationStore((state) => state.showBottomNav)
+  const { showBottomNav, expectedAnimations } = useAnimationStore(
+    useShallow((state) => ({
+      showBottomNav: state.showBottomNav,
+      expectedAnimations: state.expectedAnimations,
+    }))
+  )
 
-  if (!showBottomNav) {
+  if (!showBottomNav && expectedAnimations.length > 0) {
     return null
   }
 

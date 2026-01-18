@@ -1,5 +1,7 @@
+import { HeaderTopbar } from './HeaderTopbar'
+
 function Header() {
-  return <header></header>
+  return <HeaderTopbar />
 }
 
 export { Header }

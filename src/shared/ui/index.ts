@@ -1,3 +1,4 @@
+export { Avatar } from './avatar'
 export { BottomNav, useBottomNavVisibility } from './bottom-nav'
 export { Button } from './button'
 export { CircleIcon } from './circle-icon'

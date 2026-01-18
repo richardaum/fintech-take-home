@@ -1,5 +1,5 @@
 import { type Transaction, useWalletQuery } from '@/entities/wallet'
-import { AngleRightSmallIcon, ArrowRightIcon } from '@/shared/icons'
+import { AngleRightSmallIcon } from '@/shared/icons'
 import { cn, formatCurrency } from '@/shared/lib'
 import { Divider } from '@/shared/ui'
 
@@ -11,8 +11,8 @@ function TransactionList({ className }: { className?: string }) {
   return (
     <section className={cn('space-y-2', className)}>
       <header className="flex items-center justify-between">
-        <h2 className="text-title-small font-medium">Transactions</h2>
-        <ArrowRightIcon className="size-6" />
+        <h2 className="text-headline-small font-medium">Transactions</h2>
+        <AngleRightSmallIcon className="size-6" />
       </header>
 
       <ul className="rounded-xl bg-gray-900 p-4">
