@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { BellIcon, SearchIcon, TrophyStarIcon } from '@/shared/icons'
 import { animationManager, cn } from '@/shared/lib'
 import { useAnimationStore } from '@/shared/lib/useAnimationStore'
-import { SearchInput } from '@/shared/ui'
+import { Button, SearchInput } from '@/shared/ui'
 
 import { AnimationName, homeAnimationDelays } from './animations'
 
@@ -26,13 +26,19 @@ function HeaderTopbar({ className }: { className?: string }) {
         addCompletedAnimation(AnimationName.HeaderTopbar)
       }}
     >
-      <TrophyStarIcon className="size-6" />
+      <Button variant="ghost" size="thin">
+        <TrophyStarIcon className="size-6" />
+      </Button>
+
       <SearchInput
         colorVariant="blue"
         leftSection={<SearchIcon />}
         placeholder={`Search "Payments"`}
       />
-      <BellIcon className="size-6" />
+
+      <Button variant="ghost" size="thin">
+        <BellIcon className="size-6" />
+      </Button>
     </motion.div>
   )
 }

@@ -47,7 +47,7 @@ function BottomNav() {
       })}
       className="fixed right-0 bottom-[34px] left-0 z-50 mx-auto h-16 w-full max-w-[400px]"
     >
-      <div className="m-4 mb-0 flex items-center justify-around rounded-xl bg-gray-900">
+      <ul className="m-4 mb-0 flex items-center justify-around rounded-xl bg-gray-900">
         <NavItem icon={ICONS.home} path="/" />
         <NavItem icon={ICONS.chartPie} path="/chart" notImplemented />
         <NavItem
@@ -58,7 +58,7 @@ function BottomNav() {
         />
         <NavItem icon={ICONS.chat} path="/chat" />
         <NavItem icon={ICONS.user} path="/profile" />
-      </div>
+      </ul>
 
       {/* hide content when scrolling */}
       <div className="bg-bg h-[34px] w-full" />
@@ -94,20 +94,23 @@ function NavItem({
   }
 
   return (
-    <Link to={path} onClick={handleClick}>
-      <Button
-        variant={isPrimary ? 'primary' : 'ghost'}
-        shape="radius"
-        size="nav"
-        className="relative"
-        disabled={disabled}
-      >
-        <IconComponent className={cn(isActive && 'text-bg-accent')} />
-        {isActive && (
-          <div className="bg-bg-accent absolute bottom-3 left-1/2 size-1 -translate-x-1/2 rounded-full" />
-        )}
-      </Button>
-    </Link>
+    <li>
+      <Link to={path} onClick={handleClick}>
+        <Button
+          variant={isPrimary ? 'primary' : 'ghost'}
+          shape="radius"
+          size="nav"
+          className="relative"
+          disabled={disabled}
+          tabIndex={-1}
+        >
+          <IconComponent className={cn(isActive && 'text-bg-accent')} />
+          {isActive && (
+            <div className="bg-bg-accent absolute bottom-3 left-1/2 size-1 -translate-x-1/2 rounded-full" />
+          )}
+        </Button>
+      </Link>
+    </li>
   )
 }
 

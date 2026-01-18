@@ -4,7 +4,7 @@ import { cn } from '@/shared/lib'
 
 type ButtonVariant = 'outline' | 'primary' | 'ghost'
 type ButtonShape = 'square' | 'radius' | 'round'
-type ButtonSize = 'auto' | 'nav'
+type ButtonSize = 'auto' | 'nav' | 'thin'
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: ReactNode
@@ -47,6 +47,7 @@ function Button({
 
   const sizeStyles = {
     auto: cn('h-14 px-[46px] py-4'),
+    thin: cn(''),
     nav: cn('h-16 w-16 p-0'),
   }
 
